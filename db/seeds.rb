@@ -17,6 +17,6 @@ json["drinks"].each do |ingredient|
   Ingredient.create!(name: ingredient['strIngredient1'])
 end
 
-Cocktail.create(name: 'Dragon', description: 'Symbolised by three broken or yin lines, this trigram is called K’un or the Earth. The Earth is entirely yin or feminine and represents fertility. As the creative principle, she is the mother of all things and she is dark and devoted, and warm and receptive.')
+# Cocktail.create(name: 'Dragon', description: 'Symbolised by three broken or yin lines, this trigram is called K’un or the Earth. The Earth is entirely yin or feminine and represents fertility. As the creative principle, she is the mother of all things and she is dark and devoted, and warm and receptive.')
 
-Cocktail.create(name: 'Earth', description: 'Symbolised by three broken or yin lines, this trigram is called K’un or the Earth. The Earth is entirely yin or feminine and represents fertility. As the creative principle, she is the mother of all things and she is dark and devoted, and warm and receptive.')
+# Cocktail.create(name: 'Earth', description: 'Symbolised by three broken or yin lines, this trigram is called K’un or the Earth. The Earth is entirely yin or feminine and represents fertility. As the creative principle, she is the mother of all things and she is dark and devoted, and warm and receptive.')

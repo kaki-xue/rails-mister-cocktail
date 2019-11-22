@@ -1,15 +1,42 @@
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
+
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/originals/1f/07/56/1f07567025db1a458071b78f19caec48.jpg);">
   <div class="container">
-    <h1> <strong> <%=@cocktail.name %></strong> <h1>
+    <h1> <strong> Bar of Change</strong> <h1>
       <br>
-      <p>Pub 333 Special</p>
+      <p>WOOD - FIRE - EARTH - GOLD - WATER</p>
   </div>
 </div>
 
-<div>
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+<div class="container my-5 w-80">
+  <div class="card-product justify-content-between pr-3">
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+
+    <div class="card-product-infos">
+      <h2><%= @cocktail.name %></h2>
+      <p> <strong>  <%= @cocktail.description %></strong></p>
+    </div>
+
+    <ul class="list-group-item">
+      <% @cocktail.ingredients.each do |ingredient| %>
+        <li class="list-group-item">
+        <%= ingredient.name %>
+          <% ingredient.doses.each do |dose| %>
+              <%= dose.description %>
+              <%= link_to dose_path(dose), method: :delete, data: {confirm: "are your sure?"} do %>
+              <i class = "fa fa-trash destroy_dose"></i>
+              <% end %>
+          <% end %>
+        <% end %>
+        </li>
+       <br>
+      <%= link_to "new dose", new_cocktail_dose_path(@cocktail.id)  %> |
+      <%= link_to "back to Bar K", cocktails_path %>
+    </ul>
+  </div>
 </div>
 
 
@@ -17,21 +44,8 @@
 
 
 
-<ul>
-
-<% @cocktail.ingredients.each do |ingredient| %>
-<li>
-<%= ingredient.name %>
-<% ingredient.doses.each do |dose| %>
-<%= dose.description %>
-<%= link_to "delete", dose_path(dose), method: :delete %>
-<% end %>
-<% end %>
-</li>
-
-</ul>
 
 
-<br>
-<%= link_to "new dose", new_cocktail_dose_path(@cocktail.id)  %> |
-<%= link_to "back to Bar K", cocktails_path %>
+
+
+

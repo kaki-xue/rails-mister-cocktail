@@ -1,29 +1,28 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://miro.medium.com/max/1200/1*vaNXcqR-fm7qtznVpBHnWw.jpeg);">
   <div class="container">
-    <h1>Welcome to<strong> Pub 333</strong><h1>
-    <p> Beer is proof that God loves us and wants us to be happy!</p>
+    <h1><strong> the Bar of Change</strong><h1>
+    <p> To slow time down, practice enjoying the moment. It is where we spend our entire lives!</p>
   </div>
 </div>
 
 
     <div class="container">
       <div class="row">
-<% @cocktails.each do |cocktail|%>
-<%= link_to cocktail_path(cocktail) do %>
-          <div class="col-12 col-md-4">
-             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
-             <%= cocktail.name%>
-            </div>
-          </div>
-   <% end %>
-<% end %>
-            <%= link_to new_cocktail_path do %>
+        <% @cocktails.each do |cocktail|%>
+          <%= link_to cocktail_path(cocktail), class: "col-12 col-md-4 text-white text-decoration-none" do %>
+
+               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+               <%= cocktail.name%>
+              </div>
+          <% end %>
+        <% end %>
+
+        <%= link_to new_cocktail_path, class: "col-12 col-md-4 text-white text-decoration-none" do %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1542600176-8bba4e4a6cec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80'); height: ; width: 400;">
             + New
           </div>
-          <% end %>
+        <% end %>
        </div>
-
     </div>
 
 

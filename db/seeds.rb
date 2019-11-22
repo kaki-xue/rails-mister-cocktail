@@ -6,10 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
-Dose.destroy_all if Rails.env.development?
-Ingredient.destroy_all if Rails.env.development?
-Cocktail.destroy_all if Rails.env.development?
-
+Dose.destroy_all
+Ingredient.destroy_all
+Cocktail.destroy_all
 
 response = open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
 json = JSON.parse(response.read)
